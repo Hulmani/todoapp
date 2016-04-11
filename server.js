@@ -7,9 +7,11 @@ var database = require('./config/database'); 			// load the database config
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
-
+var cookieParser = require('cookie-parser');
 // configuration ===============================================================
-mongoose.connect(database.localUrl); 	// Connect to local MongoDB instance. A remoteUrl is also available (modulus.io)
+mongoose.connect(database.remoteUrl); 	// Connect to local MongoDB instance. A remoteUrl is also available (modulus.io)
+
+//mongoose.connect("mongodb://localhost:27017/test");
 
 app.use(express.static(__dirname + '/public')); 		// set the static files location /public/img will be /img for users
 app.use(morgan('dev')); // log every request to the console
@@ -23,5 +25,10 @@ app.use(methodOverride('X-HTTP-Method-Override')); // override with the X-HTTP-M
 require('./app/routes.js')(app);
 
 // listen (start app with node server.js) ======================================
+//app.use(express.cookieParser('my secret here'));
+app.use(cookieParser());
+
+
+
 app.listen(port);
 console.log("App listening on port " + port);
