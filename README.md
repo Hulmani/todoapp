@@ -30,3 +30,15 @@ Each branch represents a certain tutorial.
 Happy Todo-ing!
 
 ![Todo-aholic](http://i.imgur.com/ikyqgrn.png)
+
+# todoapp extended by Manoj Hulmani
+
+1. Clone the repository: `git clone git@github.com:Hulmani/todoapp.git``
+2. Install the application: `npm install`
+3. Start the server: `node server.js`
+4. View in browser at `http://localhost:8080`
+
+## Assignment(EAI)
+
+
+
