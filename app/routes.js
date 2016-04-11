@@ -38,18 +38,18 @@ module.exports = function (app) {
     // get all todos
     app.get('/api/todos', function (req, res) {
         // use mongoose to get all todos in the database
-            try
-            {
-            var cookie = req.cookies.test;
-            console.log('cookie exists', cookie);
-            }
-            catch(e)
-            {
-            var randomNumber=Math.random().toString();
-            randomNumber=randomNumber.substring(2,randomNumber.length);
-            res.cookie('test','present', { maxAge: 900000, httpOnly: true });
-            console.log('Not defined: cookie created successfully');
-            }
+//            try
+//            {
+//            var cookie = req.cookies.test;
+//            console.log('cookie exists', cookie);
+//            }
+//            catch(e)
+//            {
+//            var randomNumber=Math.random().toString();
+//            randomNumber=randomNumber.substring(2,randomNumber.length);
+//            res.cookie('test','present', { maxAge: 900000, httpOnly: true });
+//            console.log('Not defined: cookie created successfully');
+//            }
              // no: set a new cookie
            
             getTodos(res);
