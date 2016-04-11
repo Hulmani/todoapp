@@ -6,7 +6,7 @@ function getTodos(res) {
     Todo.find(function (err, todos) {
              
         // if there is an error retrieving, send the error. nothing after res.send(err) will execute
-              res.cookie('kop','hrl', { maxAge: 900000, httpOnly: true });
+             // res.cookie('kop','hrl', { maxAge: 900000, httpOnly: true });
               console.log('cookie 2 created successfully');
 
             if (err) {
