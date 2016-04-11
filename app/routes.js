@@ -12,7 +12,7 @@ function getTodos(res) {
             if (err) {
             res.send(err);
         }
-              //console.log("inside rooutes " +todos[0].id);
+    //console.log("inside rooutes " +todos[0].id);
         res.json(todos); // return all todos in JSON format
     });
 }
