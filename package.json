@@ -4,6 +4,9 @@
   "description"  : "Simple todo application.",
   "main"         : "server.js",
   "author"       : "Scotch",
+ "scripts": {
+        "start": "node servver.js"
+    }
   "dependencies" : {
     "express"         : "~4.13.4",
     "mongoose"        : "~3.8.13",

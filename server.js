@@ -26,7 +26,7 @@ require('./app/routes.js')(app);
 
 // listen (start app with node server.js) ======================================
 //app.use(express.cookieParser('my secret here'));
-app.use(cookieParser());
+//app.use(cookieParser());
 
 
 
