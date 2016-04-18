@@ -96,7 +96,7 @@ module.exports = function (app) {
 //            });
     
     app.put('/api/todos/:todo_user/:todo_id', function (req, res) {
-            console.log('Updating '+req.params.todo_id+' '+req.params.todo_user);
+            console.log('Updating '+req.params.todo_id+' '+req.params.todo_user+' ');
             
             Todo.findById( req.params.todo_id, function (err, todo) {
               if (err) return handleError(err);

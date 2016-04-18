@@ -33,37 +33,41 @@
 
 		<!-- HEADER AND TODO COUNT -->
 		<div class="jumbotron text-center">
-			<h1>I'm a Todo-aholic <span class="label label-info">{{ todos.length }}</span></h1>
+			<h1>ToDo LIST <span class="label label-info">{{ todos.length }}</span></h1>
 		</div>
 
 		<!-- TODO LIST -->
 		<div id="todo-list" class="row">
-			<div class="col-sm-4 col-sm-offset-4">
+			<!--div class="col-sm-4 col-sm-offset-4"-->
 
-				
+				<div class="col-sm-4 col-sm-offset-4 text-center">
 
 				<!-- LOOP OVER THE TODOS IN $scope.todos -->
-                 TO-DO-List<br/>
+                
 				
                 <div class="checkbox" ng-repeat="todo in todos">
 					
-                    ToDo: <b>{{ todo.text }}</b>
+                    <b>{{ todo.text }}</b>
                     <br/>
-                      Delete
                       <label>
-                      <input type="checkbox" ng-click="deleteTodo(todo._id,formData.user)">
-                              
-                        </label>
-                      
-                      
-                      <br/>
-                      
-                      
-                      Completed: {{todo.completed}}
-                    <label>
-                    <input type="checkbox" ng-click="completeTodo(todo._id,formData.user)">
-                              
+                      Completed
+                    
+                        <input ng-model="completeBox" type="checkbox" ng-checked={{todo.completed}} ng-click="completeTodo(todo._id,todo.userName)">
+                            </label>
+ 
+                            
+                            <br/>
+                            <label ng-if="todo.completed===true">
+
+                            Delete
+                            
+                            <input ng-checked="deleteBox" type="checkbox"   ng-click="deleteTodo(todo._id,todo.userName,todo.completed)">
+                    
+                                <span ng-model="msg"></span>
+                                
                               </label>
+                             <br/>
+                            
                       
                       <br/>
                       

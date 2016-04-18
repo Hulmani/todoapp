@@ -25,7 +25,7 @@ angular.module('todoController', [])
 
 			// validate the formData to make sure that something is there
 			// if form is empty, nothing will happen
-			if ($scope.formData.text != undefined && $scope.formData.user != undefined ) {
+			if ($scope.formData.text != undefined && $scope.formData.user !=undefined ) {
 				$scope.loading = true;
 
 				// call the create function from our service (returns a promise object)
@@ -47,15 +47,26 @@ angular.module('todoController', [])
 
 		// DELETE ==================================================================
 		// delete a todo after checking it
-		$scope.deleteTodo = function(id,userName) {
+		$scope.deleteTodo = function(id,userName,completed) {
 			$scope.loading = true;
+                                   console.log(userName+" "+id+" "+completed);
+                if(!completed)
+                                  {
+                  $scope.msg="Please complete task before deleting";
+               // alert("Please complete task before deleting");
+                                   $scope.deleteBox=false;
+                                   $scope.loading = false;
 
+                    }
+                                   else
+                                   {
 			Todos.delete(id,userName)
 				// if successful creation, call our get function to get all the new todos
 				.success(function(data) {
 					$scope.loading = false;
 					$scope.todos = data; // assign our new list of todos
 				});
+                                   }
 		};
 	
             $scope.completeTodo = function(id,userName) {
